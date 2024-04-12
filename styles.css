@@ -1,0 +1,11 @@
+/* Written by Brian Bird, 4/9/2024 */
+
+image {
+  width: 50px;
+  height: 50px;
+}
+
+.custom-width {
+  width: 80%;
+  margin: auto;
+}
