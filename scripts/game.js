@@ -36,6 +36,9 @@ class Game {
     // Add a player to the game. 
     // Pass in the palyer's name as a string
     addPlayer(name) {
+        if (name === "") {  // if name is an empty string, use a default name
+            name = "Player " + (this.#players.length + 1);
+        }
         let player = new Player(name);
         player.number = this.#players.length + 1;
         this.#players.push(player);
