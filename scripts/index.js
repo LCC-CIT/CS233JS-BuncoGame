@@ -76,3 +76,17 @@ function testGame() {
     console.log(`The winner is ${bunco.getGameWinner().name}`);
 
 }
+
+// Temporary test for Farkle scoring
+function testFarkleScoring() {
+    let player = new Player();
+    //let setAsideDice = [1,3,4,2,1,4];
+    // let setAsideDice = [1,3,4,3,1,4];
+    // let setAsideDice = [1,2,3,4,5,6];
+    // let setAsideDice = [1,1,1,2,3,4];
+    // let setAsideDice = [1,1,1,2,2,2];
+    // let setAsideDice = [2,2,2,2,2,2];
+    let setAsideDice = [1,1,1,1,5,5];
+    let score = player.scoreFarkle(setAsideDice);
+    console.log(score);
+}
