@@ -81,14 +81,19 @@ class Player {
             }
         }
         // check for a straight--six distinct values
-        let keys = Object.keys(counts);
+        let keys = Object.keys(counts); // array of distinct values
         let distinctValues = keys.length;
         if (distinctValues === 6) {
             score = 3000;
         }
         // check for thee pairs of matching die
-        else if (distinctValues === 3 && numberOfDice === 6) {
+        else if (counts[keys[0]] == 2 && counts[keys[1]] == 2 && counts[keys[2]] == 2) {
             score = 1500;
+        }
+        // check for four of a kind and a pair
+        // if there are two values and either the first or second value has four die, score 1500
+        else if (distinctValues === 2 && numberOfDice === 6 && (counts[keys[0]] == 4 || counts[keys[1]] == 4)) {
+                score = 1500;
         }
         // check for sets of three matching dice
         else {

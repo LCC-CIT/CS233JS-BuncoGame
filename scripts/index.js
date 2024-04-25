@@ -78,41 +78,58 @@ function testGame() {
 }
 
 // Temporary test for Farkle scoring
+// Scoring is based on the following rules: https://www.dice-play.com/Games/TenThousand.html
 function testFarkleScoring() {
     let player = new Player();
     let setAsideDice = [1,3,4,2,1,4]; // two 1s: 200
     let score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 200 ', score === 200 ? 'pass' : 'fail', score);
 
     setAsideDice = [1,3,4,3,1,4];  // three pairs: 1500
     score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 1500 ', score === 1500 ? 'pass' : 'fail', score);
 
     setAsideDice = [1,2,3,4,5,6]; // straight: 3000
     score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 3000 ', score === 3000 ? 'pass' : 'fail', score);
 
     setAsideDice = [1,1,1,2,3,4]; // tripple 1s: 1000
     score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 1000 ', score === 1000 ? 'pass' : 'fail', score);
 
     setAsideDice = [1,1,1,2,2,2]; // tripple 1s and 2s: 1200
     score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 1200 ', score === 1200 ? 'pass' : 'fail', score);
 
     setAsideDice = [2,2,2,2,2,2]; // six 2s: 400
     score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 400 ', score === 400 ? 'pass' : 'fail', score);
 
-    setAsideDice = [1,1,1,1,5,5]; // tripple 1s, a 1 and two 5s: 1200
+    setAsideDice = [6,6,2,2,1,1]; // three pairs: 1,500
     score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 1500 ', score === 1500 ? 'pass' : 'fail', score);
+
+    setAsideDice = [6,6,2,2,2,2]; // on pair with four of a kind: 1,500
+    score = player.scoreFarkle(setAsideDice);
+    console.log('expected 1500 ', score === 1500 ? 'pass' : 'fail', score);
+
+    setAsideDice = [1,1,1,1,5,5]; // four of a kind with a pair: 1,500
+    score = player.scoreFarkle(setAsideDice);
+    console.log('expected 1500 ', score === 1500 ? 'pass' : 'fail', score);
+
+    setAsideDice = [1,1,1,2,5,5]; // tripple 1s, a 2 and two 5s: 1000 + 2* 50 = 1100
+    score = player.scoreFarkle(setAsideDice);
+    console.log('expected 1100 ', score === 1100 ? 'pass' : 'fail', score);
+
+    setAsideDice = [2,2,2,1,5,5]; // tripple 2s, a 1 and two 5s: 200 + 100 + 2 * 50 = 400
+    score = player.scoreFarkle(setAsideDice);
+    console.log('expected 400 ', score === 400 ? 'pass' : 'fail', score);
 
     setAsideDice = [1,1,1];  // 1000
     score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 1000 ', score === 1000 ? 'pass' : 'fail', score);
     
     setAsideDice = [1,1];  // 200
     score = player.scoreFarkle(setAsideDice);
-    console.log(score);
+    console.log('expected 200 ', score === 200 ? 'pass' : 'fail', score);
 }
