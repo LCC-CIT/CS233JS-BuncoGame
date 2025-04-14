@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Written by Brian Bird 4/12/25, revised 4/14/25 -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,8 @@
 <body>
     <div class="container text-center" style="width:400px;">
         <h1>Bunco Game</h1>
-        <p>   Instructions for <a href="https://gameonfamily.com/how-to-play-bunco/#toggle-id-4" target="_blank"> playing Bunco with two players</a>
+        <p> Instructions for <a href="https://en.wikipedia.org/wiki/Bunco" target="_blank"> playing
+                Bunco</a>
 
         </p>
 
@@ -72,26 +74,41 @@
                     <td id="roundScore2">0</td>
                 </tr>
                 <tr>
-                    <td>Game:</td>
-                    <td id="totalScore1">0</td>
-                    <td id="totalScore2">0</td>
-                </tr>
-                <tr>
                     <td>Rounds Won:</td>
                     <td id="roundsWon1">0</td>
                     <td id="roundsWon2">0</td>
                 </tr>
             </tbody>
         </table>
-        <h2>How to Score One Roll</h2>
-        <ul>
-            <li>The player has one or more dice that match the round number (e.g. rolling 1 in round 1, 2 in round 2, etc). A single match of the round is worth 1 point, a matching pair of the round is worth 2 points, and a triple match of the round is called a “bunco” and has a special bonus value of 21 points.</li>
-            <li>The player rolls a matching set of 3 dice of any number other than the round number and earns 5 points. This is also called a “mini bunco.” Example: player rolls three 4s in round 2.</li>
+        <h2 class="text-start">How to Score One Roll</h2>
+        <ul class="text-start">
+            <li>If the dice rolled match the round number:
+                <ul class="ms-4">
+                    <li>A single match is worth 1 point</li>
+                    <li>A pair that matches is worth 2 points</li>
+                    <li>A Triple match is called a “bunco” and is worth 21 points.</li>
+                </ul>
+            </li>
+            <li class="mt-3">If a triple match is rolled and the dice are a number other than the round number, it's
+                worth 5 points. </li>
         </ul>
-        
+        <h2 class="text-start">Turns and Rounds</h2>
+        <ul class="text-start">
+            <li>A players turn ends if:
+                <ul>
+                    <li>They don't score.</li>
+                    <li>Their score reaches 21 (a Bunco) and they've won the round.</li>
+                </ul>
+            </li>
+            <li>A round ends when one palyer's score reaches 21 (a Bunco)</li>
+            <li>The game ends after six rounds.</li>
+            <li>The player with the most rounds won is the winner.</li>
+        </ul>
+
+
     </div>
 
-     <!-- add bootstrap -->
+    <!-- add bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

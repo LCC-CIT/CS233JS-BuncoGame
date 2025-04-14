@@ -52,12 +52,8 @@ class Game {
             this.#round = 0;  // this means the game is over
             // the round will be reset to 1 in getGameWinner
         }
-        // add round score to the total score
-        for (const player of this.#players) {
-            player.totalScore += player.roundScore;
-        }
 
-        // reset all the round scores
+        // reset all the player's round scores
         for (const player of this.#players) {
             player.roundScore = 0;
         }
@@ -80,11 +76,10 @@ class Game {
         const scores = {
             rollScore,
             roundScore: player.roundScore,
-            totalScore: player.totalScore,
             roundsWon: player.roundsWon
         };
 
-        // if the player scored 0, their turn is over
+        // if the player scored 0 on their roll, their turn is over
         if (rollScore === 0) {
             this.#currentPlayerIndex++;
             if (this.#currentPlayerIndex >= this.#players.length) {
