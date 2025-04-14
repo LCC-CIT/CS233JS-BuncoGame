@@ -3,6 +3,7 @@
 // create a new game
 let bunco = new Game();
 
+// Initialize the buttons and event handlers
 window.onload = function () {
     // click event handlers
     document.getElementById("start").addEventListener("click", startGame);
@@ -12,14 +13,15 @@ window.onload = function () {
     document.getElementById("roll").disabled = true;
 }
 
+// Called when the Start Game button is clicked
 function startGame() {
-    bunco.startNewGame();
-    document.getElementById("start").disabled = true;
-    document.getElementById("roll").disabled = false;
-    bunco.addPlayer(document.getElementById("name1").value);
+    bunco.startNewGame();  // Reset the game logic
+    document.getElementById("start").disabled = true;  // Start Game button disabled
+    document.getElementById("roll").disabled = false;  // Roll button enabled
+    bunco.addPlayer(document.getElementById("name1").value);  // Get the player names
     bunco.addPlayer(document.getElementById("name2").value);
-    document.getElementById("nextRoll").innerText += bunco.getCurrentPlayer().name;
-    bunco.startNewGame();
+    document.getElementById("nextRoll").innerText += bunco.getCurrentPlayer().name; // Show who's turn in next
+    bunco.startNewGame();  // reset the game-play logic
     console.log("Game started");
 }
 
