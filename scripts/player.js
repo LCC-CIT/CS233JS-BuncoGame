@@ -4,7 +4,6 @@ class Player {
     // declare private instance variables
     #name
     #number // player number
-    #totalScore
     #roundScore
     #roundsWon
 
@@ -12,7 +11,6 @@ class Player {
         // Initialize instance variables.
         this.#name = name;
         this.#number = 0;
-        this.#totalScore = 0;
         this.#roundScore = 0;
         this.#roundsWon = 0;
     }
@@ -21,12 +19,10 @@ class Player {
     get name() { return this.#name; }
     get number() { return this.#number; }
     get roundScore() { return this.#roundScore; }
-    get totalScore() { return this.#totalScore; }
     get roundsWon() { return this.#roundsWon; }
 
     set number(value) { this.#number = value; }
     set roundScore(value) { this.#roundScore = value; }
-    set totalScore(value) { this.#totalScore = value; }
     set roundsWon(value) { this.#roundsWon = value; }
 
     // Roll all the dice in the array passed to the player
